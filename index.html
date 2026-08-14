@@ -78,6 +78,8 @@ a{color:var(--gold)}
 .bote-cifra .v{font-family:var(--display); font-weight:800; font-size:clamp(50px,9vw,82px); line-height:.9; color:var(--gold)}
 .premios{display:flex; flex-wrap:wrap; gap:8px}
 .premio{border:1px solid var(--line); border-radius:3px; padding:7px 11px; background:rgba(0,0,0,.18)}
+.premio.neg{border-color:var(--rojo-line)}
+.premio.neg .m{color:var(--rojo)}
 .premio .n{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--musgo); display:block}
 .premio .m{font-family:var(--display); font-weight:700; font-size:23px; line-height:1.1}
 
@@ -229,7 +231,7 @@ const CONFIG = {
   csvTnf:        "",
 
   // Fecha y hora del draft en formato AAAA-MM-DD HH:MM (24h). Vacio si no hay fecha.
-  draft:         "",
+  draft:         "2026-09-03 20:00",
 
   resaltar: "Alejandro Castillo Fadl"
 };
@@ -1000,6 +1002,7 @@ function leer(params){
   const inscripcion = num((uno('inscripcion') || {}).Vigente);
   const premios     = de('premio').map(p => [p.Concepto, num(p.Vigente)]);
   const castigos    = de('castigo').map(p => num(p.Vigente));
+  const castigosDet = de('castigo').map(p => [p.Concepto, num(p.Vigente)]);
   const semanales   = de('semanal').map(p => num(p.Vigente));
 
   const multas    = de('multa').map(p => num(p.Vigente));
@@ -1008,15 +1011,19 @@ function leer(params){
   const entra     = semanales.filter(s => s < 0).reduce((a,s) => a + Math.abs(s), 0);
   const sale      = semanales.filter(s => s > 0).reduce((a,s) => a + s, 0);
 
-  return { equipos, inscripcion, premios, bote, repartido, multas,
+  return { equipos, inscripcion, premios, castigosDet, bote, repartido, multas,
            difBote: bote - repartido, difSemana: entra - sale };
 }
 
 function pintarBote(r){
   document.getElementById('bote').textContent = mxn(r.bote);
-  document.getElementById('premios').innerHTML = r.premios.map(([t,m]) =>
+  const pillsPremios = r.premios.map(([t,m]) =>
     `<div class="premio"><span class="n">${esc(t.split(' - ')[0])}</span><span class="m">${mxn(m)}</span></div>`
   ).join('');
+  const pillsCastigos = r.castigosDet.map(([t,m]) =>
+    `<div class="premio neg"><span class="n">${esc(t.split(' - ')[0])}</span><span class="m">${mxn(m)}</span></div>`
+  ).join('');
+  document.getElementById('premios').innerHTML = pillsPremios + pillsCastigos;
 
   const chip = document.getElementById('cuadre');
   const txt  = document.getElementById('cuadre-txt');
@@ -1119,7 +1126,7 @@ function pintarDraft(){
     <div>
       <div class="k">El draft</div>
       <div class="quien">${largo(d)}</div>
-      <div class="cuando">a las ${hora} · el orden se sortea una hora antes</div>
+      <div class="cuando">a las ${hora}</div>
     </div>
     <div class="faltan">
       <div class="n">${dias === 0 ? '¡HOY!' : dias}</div>

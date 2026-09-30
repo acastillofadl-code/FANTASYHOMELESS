@@ -314,110 +314,110 @@ const DEMO_PARAMS = [
 const DEMO_TABLA  = [
   {
     "Pos": 1,
-    "Equipo": "Los Tejanos",
-    "Manager": "Eduardo Ortiz",
-    "G": 2,
+    "Equipo": "Angys Team",
+    "Manager": "Angel Serrano",
+    "G": 3,
     "P": 0,
     "E": 0,
-    "PF": 298.8,
-    "PC": 207.16
+    "PF": 427.38,
+    "PC": 386.44
   },
   {
     "Pos": 2,
     "Equipo": "Chango",
     "Manager": "Luis Gonzalez",
-    "G": 2,
+    "G": 3,
     "P": 0,
     "E": 0,
-    "PF": 296.88,
-    "PC": 180.12
+    "PF": 425.94,
+    "PC": 307.64
   },
   {
     "Pos": 3,
-    "Equipo": "Angys Team",
-    "Manager": "Angel Serrano",
+    "Equipo": "Los Tejanos",
+    "Manager": "Eduardo Ortiz",
     "G": 2,
-    "P": 0,
+    "P": 1,
     "E": 0,
-    "PF": 273.44,
-    "PC": 237.98
+    "PF": 447.26,
+    "PC": 361.1
   },
   {
     "Pos": 4,
-    "Equipo": "Boats n H",
-    "Manager": "Alvaro Castillo Fadl",
+    "Equipo": "Los chargers",
+    "Manager": "Amancio Ferezi",
     "G": 2,
-    "P": 0,
+    "P": 1,
     "E": 0,
-    "PF": 218.56,
-    "PC": 211.42
+    "PF": 442.06,
+    "PC": 388.84
   },
   {
     "Pos": 5,
-    "Equipo": "Los chargers",
-    "Manager": "Amancio Ferezi",
-    "G": 1,
+    "Equipo": "Boats n DAK",
+    "Manager": "Alvaro Castillo Fadl",
+    "G": 2,
     "P": 1,
     "E": 0,
-    "PF": 291.9,
-    "PC": 266.1
+    "PF": 341.3,
+    "PC": 361.58
   },
   {
     "Pos": 6,
     "Equipo": "Silvinha FC",
     "Manager": "Salvador Calleros",
-    "G": 1,
+    "G": 2,
     "P": 1,
     "E": 0,
-    "PF": 225.44,
-    "PC": 214.52
+    "PF": 322.82,
+    "PC": 307.56
   },
   {
     "Pos": 7,
-    "Equipo": "Seba Hmlsss",
-    "Manager": "Sebastian Casar",
-    "G": 0,
+    "Equipo": "McLoveland",
+    "Manager": "Alejandro Castillo Fadl",
+    "G": 1,
     "P": 2,
     "E": 0,
-    "PF": 217.36,
-    "PC": 264.38
+    "PF": 308.64,
+    "PC": 360.96
   },
   {
     "Pos": 8,
-    "Equipo": "McLoveland",
-    "Manager": "Alejandro Castillo Fadl",
-    "G": 0,
-    "P": 2,
-    "E": 0,
-    "PF": 215.46,
-    "PC": 273.42
-  },
-  {
-    "Pos": 9,
     "Equipo": "Potros",
     "Manager": "Santiago Casar",
     "G": 0,
-    "P": 2,
+    "P": 3,
     "E": 0,
-    "PF": 213.34,
-    "PC": 301.68
+    "PF": 340.86,
+    "PC": 430.74
+  },
+  {
+    "Pos": 9,
+    "Equipo": "Seba Hmlsss",
+    "Manager": "Sebastian Casar",
+    "G": 0,
+    "P": 3,
+    "E": 0,
+    "PF": 310.4,
+    "PC": 361.76
   },
   {
     "Pos": 10,
     "Equipo": "It's gonna be Maye",
     "Manager": "Ricardo Noriega",
     "G": 0,
-    "P": 2,
+    "P": 3,
     "E": 0,
-    "PF": 172.04,
-    "PC": 266.44
+    "PF": 259.58,
+    "PC": 359.62
   }
 ];
 const DEMO_DRAFT  = [
   { "Pos": 1,  "Equipo": "Los chargers",           "Manager": "Amancio Ferezi" },
   { "Pos": 2,  "Equipo": "Angys Team",              "Manager": "Angel Serrano" },
   { "Pos": 3,  "Equipo": "Potros",                  "Manager": "Santiago Casar" },
-  { "Pos": 4,  "Equipo": "Boats n H",                "Manager": "Alvaro Castillo Fadl" },
+  { "Pos": 4,  "Equipo": "Boats n DAK",                "Manager": "Alvaro Castillo Fadl" },
   { "Pos": 5,  "Equipo": "It's gonna be Maye",       "Manager": "Ricardo Noriega" },
   { "Pos": 6,  "Equipo": "McLoveland",    "Manager": "Alejandro Castillo Fadl" },
   { "Pos": 7,  "Equipo": "Seba Hmlsss",                "Manager": "Sebastian Casar" },
@@ -459,16 +459,16 @@ const DEMO_SURVIVAL = [
     "Semana": 2
   },
   {
-    "Equipo": "My Best Pick Set",
+    "Equipo": "Silviña",
     "Manager": "",
     "Strikes": 1,
     "Semana": 1
   },
   {
-    "Equipo": "Silviña",
+    "Equipo": "My Best Pick Set",
     "Manager": "",
-    "Strikes": 1,
-    "Semana": 1
+    "Strikes": 2,
+    "Semana": 3
   },
   {
     "Equipo": "Chango",
@@ -485,11 +485,16 @@ const DEMO_SURVIVAL = [
 ];
 // Partidos y puntuaciones de la semana en curso. Se llena con lo que suba el comisionado (captura de ESPN).
 const DEMO_SEMANA = [
-  { "Semana": 2, "Local": "McLoveland", "PtsLocal": 96.96, "Visita": "Boats n H", "PtsVisita": 98.86 },
+  { "Semana": 2, "Local": "McLoveland", "PtsLocal": 96.96, "Visita": "Boats n DAK", "PtsVisita": 98.86 },
   { "Semana": 2, "Local": "Los chargers", "PtsLocal": 117.34, "Visita": "Los Tejanos", "PtsVisita": 147.6 },
   { "Semana": 2, "Local": "Potros", "PtsLocal": 123.52, "Visita": "Angys Team", "PtsVisita": 150.48 },
   { "Semana": 2, "Local": "Seba Hmlsss", "PtsLocal": 102.9, "Visita": "Chango", "PtsVisita": 141.42 },
-  { "Semana": 2, "Local": "Silvinha FC", "PtsLocal": 110.98, "Visita": "It's gonna be Maye", "PtsVisita": 94.82 }
+  { "Semana": 2, "Local": "Silvinha FC", "PtsLocal": 110.98, "Visita": "It's gonna be Maye", "PtsVisita": 94.82 },
+  { "Semana": 3, "Local": "It's gonna be Maye", "PtsLocal": 87.54, "Visita": "McLoveland", "PtsVisita": 93.18 },
+  { "Semana": 3, "Local": "Los Tejanos", "PtsLocal": 148.46, "Visita": "Angys Team", "PtsVisita": 153.94 },
+  { "Semana": 3, "Local": "Boats n DAK", "PtsLocal": 122.74, "Visita": "Los chargers", "PtsVisita": 150.16 },
+  { "Semana": 3, "Local": "Chango", "PtsLocal": 129.06, "Visita": "Potros", "PtsVisita": 127.52 },
+  { "Semana": 3, "Local": "Silvinha FC", "PtsLocal": 97.38, "Visita": "Seba Hmlsss", "PtsVisita": 93.04 }
 ];
 const DEMO_ESPN   = [
   {

@@ -95,6 +95,17 @@ a{color:var(--gold)}
   white-space:nowrap; border-bottom:2px solid transparent}
 .nav button:hover{color:var(--bone)}
 .nav button[aria-selected="true"]{color:var(--gold); border-bottom-color:var(--gold)}
+
+.subtabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px}
+.subtab{font-family:var(--mono); font-size:13px; color:var(--musgo); background:transparent;
+  border:1px solid var(--line); border-radius:99px; padding:6px 14px; cursor:pointer}
+.subtab:hover{border-color:var(--acc-line); color:var(--bone)}
+.subtab.activo{background:var(--gold); border-color:var(--gold); color:var(--ink); font-weight:700}
+.marcador{border:1px solid var(--line); border-radius:4px; padding:12px 16px; margin-bottom:10px; background:var(--felt)}
+.mrow{display:flex; justify-content:space-between; align-items:center; padding:6px 0; gap:14px}
+.mrow .eq{font-weight:600; font-size:15px}
+.mrow .pts{font-family:var(--mono); font-weight:700; font-size:16px; color:var(--musgo)}
+.sec-doble{margin-top:52px}
 section[hidden]{display:none}
 
 .espn{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px}
@@ -486,6 +497,41 @@ const DEMO_SURVIVAL = [
 // Partidos y puntuaciones de la semana en curso. Se llena con lo que suba el comisionado (captura de ESPN).
 const DEMO_SEMANA = [
   {
+    "Semana": 1,
+    "Local": "Los chargers",
+    "PtsLocal": 174.56,
+    "Visita": "McLoveland",
+    "PtsVisita": 118.5
+  },
+  {
+    "Semana": 1,
+    "Local": "Los Tejanos",
+    "PtsLocal": 151.2,
+    "Visita": "Potros",
+    "PtsVisita": 89.82
+  },
+  {
+    "Semana": 1,
+    "Local": "Angys Team",
+    "PtsLocal": 122.96,
+    "Visita": "Seba Hmlsss",
+    "PtsVisita": 114.46
+  },
+  {
+    "Semana": 1,
+    "Local": "Boats n DAK",
+    "PtsLocal": 119.7,
+    "Visita": "Silvinha FC",
+    "PtsVisita": 114.46
+  },
+  {
+    "Semana": 1,
+    "Local": "Chango",
+    "PtsLocal": 155.46,
+    "Visita": "It's gonna be Maye",
+    "PtsVisita": 77.22
+  },
+  {
     "Semana": 2,
     "Local": "McLoveland",
     "PtsLocal": 96.96,
@@ -589,6 +635,356 @@ const DEMO_SEMANA = [
     "PtsLocal": 121.17,
     "Visita": "Silvinha FC",
     "PtsVisita": 112.47
+  },
+  {
+    "Semana": 5,
+    "Local": "McLoveland",
+    "PtsLocal": "",
+    "Visita": "Potros",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 5,
+    "Local": "Los Tejanos",
+    "PtsLocal": "",
+    "Visita": "Chango",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 5,
+    "Local": "It's gonna be Maye",
+    "PtsLocal": "",
+    "Visita": "Boats n DAK",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 5,
+    "Local": "Silvinha FC",
+    "PtsLocal": "",
+    "Visita": "Angys Team",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 5,
+    "Local": "Seba Hmlsss",
+    "PtsLocal": "",
+    "Visita": "Los chargers",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 6,
+    "Local": "Angys Team",
+    "PtsLocal": "",
+    "Visita": "McLoveland",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 6,
+    "Local": "It's gonna be Maye",
+    "PtsLocal": "",
+    "Visita": "Los Tejanos",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 6,
+    "Local": "Chango",
+    "PtsLocal": "",
+    "Visita": "Silvinha FC",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 6,
+    "Local": "Boats n DAK",
+    "PtsLocal": "",
+    "Visita": "Seba Hmlsss",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 6,
+    "Local": "Los chargers",
+    "PtsLocal": "",
+    "Visita": "Potros",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 7,
+    "Local": "McLoveland",
+    "PtsLocal": "",
+    "Visita": "Chango",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 7,
+    "Local": "Los Tejanos",
+    "PtsLocal": "",
+    "Visita": "Silvinha FC",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 7,
+    "Local": "Seba Hmlsss",
+    "PtsLocal": "",
+    "Visita": "It's gonna be Maye",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 7,
+    "Local": "Potros",
+    "PtsLocal": "",
+    "Visita": "Boats n DAK",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 7,
+    "Local": "Los chargers",
+    "PtsLocal": "",
+    "Visita": "Angys Team",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 8,
+    "Local": "Silvinha FC",
+    "PtsLocal": "",
+    "Visita": "McLoveland",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 8,
+    "Local": "Seba Hmlsss",
+    "PtsLocal": "",
+    "Visita": "Los Tejanos",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 8,
+    "Local": "It's gonna be Maye",
+    "PtsLocal": "",
+    "Visita": "Potros",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 8,
+    "Local": "Chango",
+    "PtsLocal": "",
+    "Visita": "Los chargers",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 8,
+    "Local": "Boats n DAK",
+    "PtsLocal": "",
+    "Visita": "Angys Team",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 9,
+    "Local": "Los Tejanos",
+    "PtsLocal": "",
+    "Visita": "McLoveland",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 9,
+    "Local": "Potros",
+    "PtsLocal": "",
+    "Visita": "Seba Hmlsss",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 9,
+    "Local": "Los chargers",
+    "PtsLocal": "",
+    "Visita": "Silvinha FC",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 9,
+    "Local": "Angys Team",
+    "PtsLocal": "",
+    "Visita": "It's gonna be Maye",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 9,
+    "Local": "Boats n DAK",
+    "PtsLocal": "",
+    "Visita": "Chango",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 10,
+    "Local": "McLoveland",
+    "PtsLocal": "",
+    "Visita": "Los chargers",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 10,
+    "Local": "Potros",
+    "PtsLocal": "",
+    "Visita": "Los Tejanos",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 10,
+    "Local": "Seba Hmlsss",
+    "PtsLocal": "",
+    "Visita": "Angys Team",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 10,
+    "Local": "Silvinha FC",
+    "PtsLocal": "",
+    "Visita": "Boats n DAK",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 10,
+    "Local": "It's gonna be Maye",
+    "PtsLocal": "",
+    "Visita": "Chango",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 11,
+    "Local": "Boats n DAK",
+    "PtsLocal": "",
+    "Visita": "McLoveland",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 11,
+    "Local": "Los Tejanos",
+    "PtsLocal": "",
+    "Visita": "Los chargers",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 11,
+    "Local": "Angys Team",
+    "PtsLocal": "",
+    "Visita": "Potros",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 11,
+    "Local": "Chango",
+    "PtsLocal": "",
+    "Visita": "Seba Hmlsss",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 11,
+    "Local": "It's gonna be Maye",
+    "PtsLocal": "",
+    "Visita": "Silvinha FC",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 12,
+    "Local": "McLoveland",
+    "PtsLocal": "",
+    "Visita": "It's gonna be Maye",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 12,
+    "Local": "Angys Team",
+    "PtsLocal": "",
+    "Visita": "Los Tejanos",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 12,
+    "Local": "Los chargers",
+    "PtsLocal": "",
+    "Visita": "Boats n DAK",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 12,
+    "Local": "Potros",
+    "PtsLocal": "",
+    "Visita": "Chango",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 12,
+    "Local": "Seba Hmlsss",
+    "PtsLocal": "",
+    "Visita": "Silvinha FC",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 13,
+    "Local": "Seba Hmlsss",
+    "PtsLocal": "",
+    "Visita": "McLoveland",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 13,
+    "Local": "Los Tejanos",
+    "PtsLocal": "",
+    "Visita": "Boats n DAK",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 13,
+    "Local": "Chango",
+    "PtsLocal": "",
+    "Visita": "Angys Team",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 13,
+    "Local": "It's gonna be Maye",
+    "PtsLocal": "",
+    "Visita": "Los chargers",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 13,
+    "Local": "Silvinha FC",
+    "PtsLocal": "",
+    "Visita": "Potros",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 14,
+    "Local": "Potros",
+    "PtsLocal": "",
+    "Visita": "McLoveland",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 14,
+    "Local": "Chango",
+    "PtsLocal": "",
+    "Visita": "Los Tejanos",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 14,
+    "Local": "Boats n DAK",
+    "PtsLocal": "",
+    "Visita": "It's gonna be Maye",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 14,
+    "Local": "Angys Team",
+    "PtsLocal": "",
+    "Visita": "Silvinha FC",
+    "PtsVisita": ""
+  },
+  {
+    "Semana": 14,
+    "Local": "Los chargers",
+    "PtsLocal": "",
+    "Visita": "Seba Hmlsss",
+    "PtsVisita": ""
   }
 ];
 const DEMO_ESPN   = [
@@ -1047,20 +1443,24 @@ const DEMO_TNF    = [];
 
   <section id="draft" role="tabpanel" hidden>
     <div class="sec-cab"><h2>Orden del draft</h2><span class="sub">como viene de ESPN</span></div>
-    <p class="sec-nota">Snake draft, 45 segundos por pick. El orden lo fija el comisionado antes de la hora del draft.</p>
+    <p class="sec-nota">Así quedó el orden del draft: snake, 45 segundos por pick.</p>
     <div id="draft-cont"></div>
   </section>
 
   <section id="survival" role="tabpanel" hidden>
-    <div class="sec-cab"><h2>Survival</h2><span class="sub">un manager eliminado cada semana</span></div>
+    <div class="sec-cab"><h2>Survival</h2><span class="sub">2 strikes y quedas fuera</span></div>
     <p class="sec-nota">Se actualiza con la captura de pantalla de Yahoo que sube el comisionado.</p>
     <div id="survival-cont"></div>
   </section>
 
   <section id="semana" role="tabpanel" hidden>
-    <div class="sec-cab"><h2>La semana</h2><span class="sub">partidos y puntuaciones</span></div>
-    <p class="sec-nota">Se actualiza con la captura de pantalla de ESPN que sube el comisionado cada semana.</p>
-    <div id="semana-cont"></div>
+    <div class="sec-cab"><h2>Resultados</h2><span class="sub" id="res-sub">semanas ya jugadas</span></div>
+    <p class="sec-nota">Marcadores de cada semana terminada, como vienen de ESPN.</p>
+    <div id="resultados-cont"></div>
+
+    <div class="sec-cab sec-doble"><h2>Juegos</h2><span class="sub" id="jue-sub">próximas semanas</span></div>
+    <p class="sec-nota">Los enfrentamientos de las semanas que siguen. Cuando se juegan, pasan solos a Resultados.</p>
+    <div id="juegos-cont"></div>
   </section>
 
   <section id="saldos" role="tabpanel" hidden>
@@ -1076,14 +1476,14 @@ const DEMO_TNF    = [];
 
   <section id="reglas" role="tabpanel" hidden>
     <div class="sec-cab"><h2>El reglamento</h2><span class="sub">dinero de la liga</span></div>
-    <p class="sec-nota">Las multas de asistencia no entran al bote de premios; forman un fondo aparte.</p>
+    <p class="sec-nota">Lo que se juega en la liga: inscripción, premios de temporada y castigo al último lugar.</p>
     <div id="voto-cont"></div>
     <div class="reglas" id="reglas-cont"></div>
   </section>
 
   <section id="espn" role="tabpanel" hidden>
     <div class="sec-cab"><h2>Reglas de ESPN</h2><span class="sub">configuración de la liga</span></div>
-    <p class="sec-nota">Cómo está armada la liga en la plataforma: roster, puntuación, waivers, draft y playoffs. Se edita en la pestaña de la hoja, no aquí.</p>
+    <p class="sec-nota">Cómo está configurada la liga en ESPN: roster, puntuación, waivers, draft y playoffs.</p>
     <div id="espn-cont"></div>
   </section>
 
@@ -1474,17 +1874,60 @@ function pintarSurvival(survival){
     <div class="bloque" style="max-width:520px">${survival.map(fila).join('')}</div>`;
 }
 
-function pintarSemana(semana){
-  const cont = document.getElementById('semana-cont');
-  if (!semana.length){
-    cont.innerHTML = `<div class="vacio"><strong>Todavía no hay partidos capturados.</strong>
-      En cuanto el comisionado suba la captura de ESPN de la semana, aquí aparecen los enfrentamientos y las puntuaciones.</div>`;
+let SEMANA_DATA = [];
+const SEMANA_ACTIVA = {res: null, jue: null};
+const SEMANA_IDS = {res: 'resultados-cont', jue: 'juegos-cont'};
+
+function semanaJugada(lista, s){
+  const f = lista.filter(p => String(p.Semana) === String(s));
+  return f.length > 0 && f.every(p => hay(p.PtsLocal) && hay(p.PtsVisita));
+}
+
+function pintarSemana(lista){
+  SEMANA_DATA = lista;
+  const semanas = [...new Set(lista.map(p => String(p.Semana)))].sort((a,b) => Number(a) - Number(b));
+  const jugadas = semanas.filter(s => semanaJugada(lista, s));
+  const pendientes = semanas.filter(s => !semanaJugada(lista, s));
+  armarSemanas('res', jugadas, 'last',
+    'Todavía no hay resultados.', 'En cuanto termine la primera semana, aquí aparecen los marcadores.');
+  armarSemanas('jue', pendientes, 'first',
+    'Todavía no hay juegos cargados.', 'Aquí aparecen los enfrentamientos de la siguiente semana en cuanto el comisionado los suba.');
+}
+
+function armarSemanas(grupo, semanas, preferida, titulo, texto){
+  const cont = document.getElementById(SEMANA_IDS[grupo]);
+  const sub = document.getElementById(grupo + '-sub');
+  if (!cont) return;
+  if (!semanas.length){
+    cont.innerHTML = `<div class="vacio"><strong>${titulo}</strong>${texto}</div>`;
     return;
   }
-  cont.innerHTML = semana.map(m => `<div class="mov">
-    <div class="sem">SEM ${esc(m.Semana)}</div>
-    <div class="qq"><div class="n">${esc(m.Local)} ${esc(m.PtsLocal)} — ${esc(m.PtsVisita)} ${esc(m.Visita)}</div></div>
-  </div>`).join('');
+  if (!SEMANA_ACTIVA[grupo] || !semanas.includes(SEMANA_ACTIVA[grupo]))
+    SEMANA_ACTIVA[grupo] = preferida === 'last' ? semanas[semanas.length - 1] : semanas[0];
+  if (sub) sub.textContent = preferida === 'last'
+    ? 'última semana jugada: S' + semanas[semanas.length - 1]
+    : 'sigue: S' + semanas[0];
+  cont.innerHTML = `<div class="subtabs">${semanas.map(s =>
+    `<button class="subtab${s === SEMANA_ACTIVA[grupo] ? ' activo' : ''}" onclick="verSemana('${grupo}','${s}')">S${esc(s)}</button>`
+  ).join('')}</div><div id="${SEMANA_IDS[grupo]}-lista"></div>`;
+  renderSemana(grupo);
+}
+
+function verSemana(grupo, semana){
+  SEMANA_ACTIVA[grupo] = semana;
+  document.querySelectorAll('#' + SEMANA_IDS[grupo] + ' .subtab').forEach(b =>
+    b.classList.toggle('activo', b.textContent === 'S' + semana));
+  renderSemana(grupo);
+}
+
+function renderSemana(grupo){
+  const filas = SEMANA_DATA.filter(p => String(p.Semana) === SEMANA_ACTIVA[grupo]);
+  const cont = document.getElementById(SEMANA_IDS[grupo] + '-lista');
+  if (!cont) return;
+  cont.innerHTML = filas.map(p => `<div class="marcador">
+      <div class="mrow"><span class="eq">${esc(p.Local)}</span><span class="pts">${hay(p.PtsLocal) ? esc(p.PtsLocal) : '—'}</span></div>
+      <div class="mrow"><span class="eq">${esc(p.Visita)}</span><span class="pts">${hay(p.PtsVisita) ? esc(p.PtsVisita) : '—'}</span></div>
+    </div>`).join('');
 }
 
 function tablaHTML(tabla, conRecord){
@@ -1596,9 +2039,14 @@ function estado(txt, vivo){
     estado('Al día · ' + hora, true);
     document.getElementById('pie-estado').textContent = 'Datos leídos de la hoja del comisionado · ' + hora;
   } else {
-    estado(aviso ? 'Sin conexión a la hoja' : 'Copia de respaldo', false);
-    document.getElementById('pie-estado').textContent =
-      aviso || 'Copia de respaldo. Falta pegar las URLs de la hoja publicada en el bloque CONFIG.';
+    const _lista = (typeof DEMO_PROXIMOS !== 'undefined') ? DEMO_PROXIMOS : DEMO_SEMANA;
+    const _jug = [...new Set(_lista.map(p => String(p.Semana)))]
+      .filter(s => _lista.filter(p => String(p.Semana) === s).every(p => hay(p.PtsLocal) && hay(p.PtsVisita))).map(Number);
+    const _ult = _jug.length ? Math.max(..._jug) : 0;
+    estado(aviso ? 'Sin conexión a la hoja' : (_ult ? 'Actualizado · semana ' + _ult : 'Copia de respaldo'), !aviso && !!_ult);
+    document.getElementById('pie-estado').textContent = aviso ||
+      ('Datos capturados por el comisionado desde ESPN' + (typeof DEMO_SURVIVAL !== 'undefined' ? ' y Yahoo' : '') +
+       (_ult ? ' · última semana cargada: S' + _ult : '') + '.');
   }
  }catch(e){
   estado('Error al cargar', false);

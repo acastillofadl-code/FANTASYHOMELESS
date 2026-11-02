@@ -325,103 +325,103 @@ const DEMO_PARAMS = [
 const DEMO_TABLA  = [
   {
     "Pos": 1,
-    "Equipo": "Los chargers",
-    "Manager": "Amancio Ferezi",
-    "G": 5,
+    "Equipo": "Angys Team",
+    "Manager": "Angel Serrano",
+    "G": 6,
     "P": 1,
     "E": 0,
-    "PF": 903.02,
-    "PC": 784.65
+    "PF": 961.31,
+    "PC": 808.29
   },
   {
     "Pos": 2,
-    "Equipo": "Angys Team",
-    "Manager": "Angel Serrano",
+    "Equipo": "Los chargers",
+    "Manager": "Amancio Ferezi",
     "G": 5,
-    "P": 1,
+    "P": 2,
     "E": 0,
-    "PF": 768.13,
-    "PC": 704.17
+    "PF": 1007.14,
+    "PC": 977.83
   },
   {
     "Pos": 3,
     "Equipo": "Chango",
     "Manager": "Luis Gonzalez",
-    "G": 4,
+    "G": 5,
     "P": 2,
     "E": 0,
-    "PF": 774.06,
-    "PC": 672.7
+    "PF": 911.78,
+    "PC": 798.07
   },
   {
     "Pos": 4,
     "Equipo": "Boats n DAK",
     "Manager": "Alvaro Castillo Fadl",
-    "G": 4,
+    "G": 5,
     "P": 2,
     "E": 0,
-    "PF": 730.76,
-    "PC": 685.82
+    "PF": 850.04,
+    "PC": 801.72
   },
   {
     "Pos": 5,
     "Equipo": "Los Tejanos",
     "Manager": "Eduardo Ortiz",
-    "G": 3,
+    "G": 4,
     "P": 3,
     "E": 0,
-    "PF": 840.52,
-    "PC": 742.6
+    "PF": 944.78,
+    "PC": 801.92
   },
   {
     "Pos": 6,
     "Equipo": "McLoveland",
     "Manager": "Alejandro Castillo Fadl",
     "G": 3,
-    "P": 3,
+    "P": 4,
     "E": 0,
-    "PF": 661.16,
-    "PC": 664.83
+    "PF": 786.53,
+    "PC": 802.55
   },
   {
     "Pos": 7,
     "Equipo": "Silvinha FC",
     "Manager": "Salvador Calleros",
     "G": 3,
-    "P": 3,
+    "P": 4,
     "E": 0,
-    "PF": 636.26,
-    "PC": 647.03
+    "PF": 695.58,
+    "PC": 751.29
   },
   {
     "Pos": 8,
     "Equipo": "Seba Hmlsss",
     "Manager": "Sebastian Casar",
     "G": 2,
-    "P": 4,
+    "P": 5,
     "E": 0,
-    "PF": 678.31,
-    "PC": 780.2
+    "PF": 805.59,
+    "PC": 919.54
   },
   {
     "Pos": 9,
     "Equipo": "Potros",
     "Manager": "Santiago Casar",
     "G": 1,
-    "P": 5,
+    "P": 6,
     "E": 0,
-    "PF": 688.55,
-    "PC": 780.59
+    "PF": 804.45,
+    "PC": 899.87
   },
   {
     "Pos": 10,
     "Equipo": "It's gonna be Maye",
     "Manager": "Ricardo Noriega",
-    "G": 0,
+    "G": 1,
     "P": 6,
     "E": 0,
-    "PF": 579.84,
-    "PC": 798.02
+    "PF": 719.18,
+    "PC": 925.3
   }
 ];
 const DEMO_DRAFT  = [
@@ -435,6 +435,10 @@ const DEMO_DRAFT  = [
   { "Pos": 8,  "Equipo": "Silvinha FC",              "Manager": "Salvador Calleros" },
   { "Pos": 9,  "Equipo": "Los Tejanos",              "Manager": "Eduardo Ortiz" },
   { "Pos": 10, "Equipo": "Chango",                  "Manager": "Luis Gonzalez" }
+];
+// Movimientos de dinero (premios, multas). El saldo de cada quien = inscripcion + estos movimientos.
+const DEMO_MOVIMIENTOS = [
+  { "Semana": 7, "Manager": "Alejandro Castillo Fadl", "Concepto": "Premio Survivor (campeón: Da Bears)", "Monto": 1000 }
 ];
 const DEMO_SURVIVAL = [
   {
@@ -458,8 +462,8 @@ const DEMO_SURVIVAL = [
   {
     "Equipo": "Rick's Picks",
     "Manager": "",
-    "Strikes": 1,
-    "Semana": 5
+    "Strikes": 2,
+    "Semana": 7
   },
   {
     "Equipo": "Da Bears",
@@ -713,37 +717,37 @@ const DEMO_SEMANA = [
   {
     "Semana": 7,
     "Local": "McLoveland",
-    "PtsLocal": "",
+    "PtsLocal": 125.37,
     "Visita": "Chango",
-    "PtsVisita": ""
+    "PtsVisita": 137.72
   },
   {
     "Semana": 7,
     "Local": "Los Tejanos",
-    "PtsLocal": "",
+    "PtsLocal": 104.26,
     "Visita": "Silvinha FC",
-    "PtsVisita": ""
+    "PtsVisita": 59.32
   },
   {
     "Semana": 7,
     "Local": "Seba Hmlsss",
-    "PtsLocal": "",
+    "PtsLocal": 127.28,
     "Visita": "It's gonna be Maye",
-    "PtsVisita": ""
+    "PtsVisita": 139.34
   },
   {
     "Semana": 7,
     "Local": "Potros",
-    "PtsLocal": "",
+    "PtsLocal": 115.9,
     "Visita": "Boats n DAK",
-    "PtsVisita": ""
+    "PtsVisita": 119.28
   },
   {
     "Semana": 7,
     "Local": "Los chargers",
-    "PtsLocal": "",
+    "PtsLocal": 104.12,
     "Visita": "Angys Team",
-    "PtsVisita": ""
+    "PtsVisita": 193.18
   },
   {
     "Semana": 8,
@@ -1872,7 +1876,10 @@ function pintarSurvival(survival){
       <span class="m ${cls}">${txt}</span>
     </div>`;
   };
-  cont.innerHTML = `
+  const vivos = survival.filter(s => strikes(s) < 2);
+  const campeon = (vivos.length === 1 && eliminados.length === survival.length - 1) ? vivos[0] : null;
+  const bannerCamp = campeon ? `<div class="bloque" style="max-width:520px;margin-bottom:18px;border-color:var(--gold)"><div class="regla"><span class="t"><strong>🏆 Campeón del survival: ${esc(campeon.Equipo)}</strong></span><span class="m pos">+${mxn(1000)}</span></div></div>` : '';
+  cont.innerHTML = bannerCamp + `
     <div class="sec-cab" style="margin-bottom:14px"><span class="sub">${eliminados.length ? eliminados.length + ' eliminado' + (eliminados.length===1?'':'s') + ' · ' : ''}${conStrike.length} con 1 strike · ${limpios.length} sin strikes</span></div>
     <p class="sec-nota" style="margin-bottom:18px">Sistema de 2 strikes: la primera semana que pierdes tu pick es un strike, no eliminación. Al segundo strike quedas fuera.</p>
     <div class="bloque" style="max-width:520px">${survival.map(fila).join('')}</div>`;
@@ -2023,6 +2030,7 @@ function estado(txt, vivo){
     const ins = leer(params).inscripcion;
     saldos = tabla.filter(t => t.Manager).map(t => ({Semana:0, Manager:t.Manager, Concepto:'Inscripción', Monto:ins}));
   }
+  saldos = saldos.concat(DEMO_MOVIMIENTOS);
 
   const r = leer(params);
   pintarBote(r);
